@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene base_name="Breakout" name_space="Scene" name_suffix="0" persistency="666">
+  <Objects>
+    <Object base_name="Root" name_space="__global__" name_suffix="0" persistency="666" pickable="0" type="Object" visible="1">
+      <Object ambient="0.3 0.3 0.3 1" base_name="light" beacon="Headlight_beacon" diffuse="1 1 1 1" lightType="point" name_space="__global__" name_suffix="0" on="1" persistency="666" pickable="0" shadow="0" shadowColor="0.1 0.1 0.1 1" shadowMapRes="2048" specular="0.1 0.1 0.1 1" type="Light" visible="1">
+        <Object accept_root="1" aspect="1" at="0 0 -0.3" at_dir="0" base_name="Default" far="512" fov="1.0472" from="-0.00521893 0.0131103 0.626366" name_space="__global__" name_suffix="0" near="0.1" orthoSize="100" persistency="666" pickable="0" scale="1 1 1" type="Camera" up="0 1 0" visible="1">
+          <Object at="0 0 -1" at_dir="0" base_name="Headlight_beacon" from="0 0 0" light="light" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" type="LightBeacon" up="0 1 0" visible="1">
+            <constraint active="1" cR="0 1 0" cR_local="0" cR_mode="0" cT="0 1 0" cT_local="0" cT_mode="0" persistency="666"/>
+          </Object>
+          <constraint active="1" cR="0 1 0" cR_local="0" cR_mode="0" cT="0 1 0" cT_local="0" cT_mode="0" persistency="666"/>
+        </Object>
+      </Object>
+    </Object>
+  </Objects>
+  <Rendering deferred_rendering="0" frustum_culling="1" fxaa="0" hmdd="0" marker="0" occlusion_culling="0" persistency="666" ssao="0" ssao_kernel="4" ssao_noise="4" ssao_radius="0.02" two_sided="1"/>
+  <Scripts persistency="666">
+    <Script base_name="Breakout" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="HTML">
+      <core>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;Breakouot&lt;/title&gt;
+    &lt;style&gt;
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #FFF8DC; display: block; margin: 0 auto;}
+	&lt;/style&gt;
+
+	&lt;script&gt;
+		var ctx;
+		var canvas;
+		var x = 0;
+		var y = 0;
+		var dx = 0.1;
+		var dy = 0.1;
+		var ballRadius = 5;
+		var paddleHeight = 10;
+		var paddleWidth = 50;
+		var paddleX;
+		var rightPressed = false;
+		var leftPressed = false;
+		var width;
+		var brickRowCount = 13;
+		var brickColumnCount = 13;
+		var brickWidth = 33;
+		var brickHeight = 10;
+		var brickPadding = 3;
+		var brickOffsetTop = 30;
+		var brickOffsetLeft = 10;
+		var brickX;
+		var brickY;
+		var b;
+		var score = 0;
+		var relativeX;
+		var lives = 3;
+
+
+		var bricks = [];
+		for(c=0; c&lt;brickColumnCount; c++) {
+			bricks[c] = [];
+			for(r=0; r&lt;brickRowCount; r++) {
+				bricks[c][r] = { x: 0, y: 0, status: 1 };
+			}
+		}
+
+		document.addEventListener("keydown", keyDownHandler, false);
+		document.addEventListener("keyup", keyUpHandler, false);
+		document.addEventListener("mousemove", mouseMoveHandler, false);
+
+		function mouseMoveHandler(e) {
+			relativeX = e.clientX - canvas.offsetLeft;
+			if(relativeX &gt; 0 &amp;&amp; relativeX &lt; canvas.width) {
+				paddleX = relativeX - paddleWidth/2;
+			}
+		}
+		
+		function keyDownHandler(e) {
+			if(e.keyCode == 39) {
+				rightPressed = true;
+			}
+			else if(e.keyCode == 37) {
+				leftPressed = true;
+			}
+		}
+
+		function keyUpHandler(e) {
+			if(e.keyCode == 39) {
+				rightPressed = false;
+			}
+			else if(e.keyCode == 37) {
+				leftPressed = false;
+			}
+		}
+
+		function collisionDetection() {
+			for(c=0; c&lt;brickColumnCount; c++) {
+				for(r=0; r&lt;brickRowCount; r++) {
+				    b = bricks[c][r];
+				    if(b.status == 1) {
+                		if(x &gt; b.x &amp;&amp; x &lt; b.x+brickWidth &amp;&amp; y &gt; b.y &amp;&amp; y &lt; b.y+brickHeight) {
+                    		dy = -dy;
+                    		b.status = 0;
+							score++;
+							if(score == brickRowCount*brickColumnCount) {
+				                alert("GEWONNEN, HERZLICHEN GLÜCKWUNSCH!");
+				                document.location.reload();
+				            }
+                		}
+				    }
+				}
+			}
+		}
+
+		function drawScore() {
+			ctx.font = "16px Arial";
+			ctx.fillStyle = "#0095DD";
+			ctx.fillText("Score: "+score, 8, 20);
+		}
+
+		function drawLives() {
+			ctx.font = "16px Arial";
+			ctx.fillStyle = "#0095DD";
+			ctx.fillText("Lives: "+lives, canvas.width-65, 20);
+		}
+
+
+		function drawBall() {
+			ctx.beginPath();
+			ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+			ctx.fillStyle = "#174ced";
+			ctx.fill();
+			ctx.closePath();
+		}
+		
+		function drawPaddle() {
+			ctx.beginPath();
+			ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+			ctx.fillStyle = "#0019dd";
+			ctx.fill();
+			ctx.closePath();
+			}
+
+		function drawBricks() {
+			for(c=0; c&lt;brickColumnCount; c++) {
+				for(r=0; r&lt;brickRowCount; r++) {
+					if(bricks[c][r].status == 1) {
+						brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+						brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+						bricks[c][r].x = brickX;
+						bricks[c][r].y = brickY;
+						ctx.beginPath();
+						ctx.rect(brickX, brickY, brickWidth, brickHeight);
+						ctx.fillStyle = "#DD0042";
+						ctx.fill();
+						ctx.closePath();
+					}
+				}
+			}
+		}
+
+		function draw(){
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			drawBricks();			
+			drawBall();
+			drawPaddle();
+			drawScore();
+			drawLives();
+			collisionDetection();
+			
+			if(x + dx &gt; canvas.width-ballRadius || x + dx &lt; ballRadius) {
+				dx = -dx;
+			}
+			if(y + dy &lt; ballRadius) {
+    			dy = -dy;
+			} 
+			else if(y + dy &gt; canvas.height-ballRadius) {
+    			if(x &gt; paddleX &amp;&amp; x &lt; paddleX + paddleWidth) {
+								if(y= y-paddleHeight){
+        			dy = -dy;
+								}
+    			}
+    			else {
+       	 			lives--;
+					if(!lives) {
+						alert("GAME OVER");
+						document.location.reload();
+					}
+					else {
+						x = canvas.width/2;
+						y = canvas.height-30;
+						dx = 1;
+						dy = -1;
+						paddleX = (canvas.width-paddleWidth)/2;
+					}
+				}
+ 			}
+
+			if(rightPressed &amp;&amp; paddleX &lt; canvas.width-paddleWidth) {
+				paddleX += 7;
+			}
+			else if(leftPressed &amp;&amp; paddleX &gt; 0) {
+				paddleX -= 7;
+			}
+
+			x += dx;
+			y += dy;
+		}
+
+		function initCanvas() {
+			canvas = document.getElementById("myCanvas");
+			ctx = canvas.getContext('2d');
+			paddleX = (canvas.width-paddleWidth)/2;
+
+			x = canvas.width/2;
+			y = canvas.height-30;
+			dx = 1;
+			dy = -1;
+
+			setInterval(draw, 10);
+		}
+	
+
+	&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body onload='initCanvas()'&gt;
+&lt;canvas id="myCanvas" width="480" height="320"&gt;&lt;/canvas&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</core>
+    </Script>
+    <Script base_name="init" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	
+	if hasattr(VR, 'sprite'): VR.sprite.destroy()
+	VR.sprite = VR.Sprite('sprite')
+	VR.getRoot().find('light').addChild(VR.sprite)
+	VR.sprite.webOpen('http://localhost:5500/Breakout', 512, 1)
+	VR.sprite.setPose([0,0,0], [0,0,1], [0,-1,0])
+</core>
+      <trig type="on_scene_load" dev="" state="Pressed" param="" key="0" base_name="trigger" name_space="__global__" name_suffix="0" persistency="666"/>
+    </Script>
+  </Scripts>
+  <Sockets persistency="666"/>
+  <Background color="0.6 0.6 0.6" format=".png" path="/home/vrpraktikum/Projects/Cyberglove/usecases/Breakout/grass-texture.jpg" persistency="666" type="1"/>
+  <Navigation active="Orbit" persistency="666"/>
+  <Materials persistency="666"/>
+  <Semantics persistency="666"/>
+</Scene>
