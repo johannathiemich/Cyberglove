@@ -1,6 +1,8 @@
 # Cyberglove
 
-Practical course "Virtual Reality" in the Winter semester 2017/18 at the Karlsruhe Insitute of Technology. 
+Practical course "Virtual Reality" in the Winter semester 2017/18 at the Karlsruhe Insitute of Technology that we worked on in a team of 7 students.
+
+
 [This video](https://www.youtube.com/watch?v=ufuSgNBOhbE) shows an overview over what we achieved during this project.
 
 Our task was to continue developing an already existing Cyberglove by adding new use case examples, developing a new circuit board and case for that. In the end, we ordered the 
