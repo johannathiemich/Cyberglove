@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene base_name="linedrag" name_space="Scene" name_suffix="0" persistency="666">
+  <Objects>
+    <Object base_name="Root" name_space="__global__" name_suffix="0" persistency="666" pickable="0" type="Object" visible="1">
+      <Object ambient="0.3 0.3 0.3 1" base_name="light" beacon="Headlight_beacon" diffuse="1 1 1 1" lightType="point" name_space="__global__" name_suffix="0" on="1" persistency="666" pickable="0" shadow="0" shadowColor="0.1 0.1 0.1 1" shadowMapRes="2048" specular="0.1 0.1 0.1 1" type="Light" visible="1">
+        <Object accept_root="1" aspect="1" at="-0.0313 0.0928 -0.0133" at_dir="0" base_name="Default" far="512" fov="1.0472" from="0.0358 2.9072 -0.07152" name_space="__global__" name_suffix="0" near="0.1" orthoSize="100" persistency="666" pickable="0" scale="1 1 1" type="Camera" up="0 1 0" visible="1">
+          <Object at="0 0 -1" at_dir="0" base_name="Headlight_beacon" from="0 0 0" light="light" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" type="LightBeacon" up="0 1 0" visible="1">
+            <constraint persistency="666"/>
+          </Object>
+          <constraint persistency="666"/>
+        </Object>
+        <Object at="0 0 -1" at_dir="0" base_name="TMP_GEO_SETUP_NAME" from="0 0 0" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" sourceparam="" sourcetype="0" type="Geometry" up="0 1 0" visible="1">
+          <constraint persistency="666"/>
+        </Object>
+        <Object at="9.64428 -2.08119 -7.44131" at_dir="0" base_name="TMP_GEO_SETUP_NAME" from="9.01397 -2.27205 -6.68878" name_space="__global__" name_suffix="1" persistency="666" pickable="1" scale="5 5 5" sourceparam="" sourcetype="0" type="Geometry" up="-0.421161 0.898341 -0.124927" visible="1">
+          <Object at="0 0 -1" at_dir="0" base_name="Rigged Hand_dae.dae" from="0 0 0" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" type="Transform" up="0 1 0" visible="1">
+            <Object base_name="Scene" name_space="__global__" name_suffix="0" persistency="666" pickable="0" type="Object" visible="1">
+              <Object base_name="OpenSG_AmbientLight" name_space="__global__" name_suffix="0" persistency="666" pickable="0" type="ChunkOverrideGroup" visible="1">
+                <Object base_name="Point" name_space="__global__" name_suffix="1" persistency="666" pickable="0" type="PointLight" visible="1">
+                  <Object at="0 0.0245625 -1" at_dir="0" base_name="Armature" from="0 0.0245625 0" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" type="Transform" up="0 1 0" visible="1">
+                    <constraint persistency="666"/>
+                  </Object>
+                  <Object at="0 0 -1" at_dir="0" base_name="Cube_005" from="0 0 0" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" type="Transform" up="0 1 0" visible="1">
+                    <Object base_name="Armature" name_space="__global__" name_suffix="2" persistency="666" pickable="0" type="Object" visible="1">
+                      <Object base_name="Armature" name_space="__global__" name_suffix="1" persistency="666" pickable="0" type="SkinnedGeometry" visible="1"/>
+                    </Object>
+                    <constraint persistency="666"/>
+                  </Object>
+                  <Object at="0 0 -1" at_dir="0" base_name="Cube_000" from="0 0 0" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" type="Transform" up="0 1 0" visible="1">
+                    <Object base_name="Armature" name_space="__global__" name_suffix="4" persistency="666" pickable="0" type="Object" visible="1">
+                      <Object base_name="Armature" name_space="__global__" name_suffix="3" persistency="666" pickable="0" type="SkinnedGeometry" visible="1"/>
+                    </Object>
+                    <constraint persistency="666"/>
+                  </Object>
+                  <Object at="0.33982 0.278983 1.94723" at_dir="0" base_name="Hemi" from="0.495596 0.785061 2.79554" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" type="Transform" up="-0.030777 0.860857 -0.507916" visible="1">
+                    <constraint persistency="666"/>
+                  </Object>
+                  <Object at="0.0827517 0.57086 -0.209598" at_dir="0" base_name="Point" from="0.0827517 0.57086 0.790402" name_space="__global__" name_suffix="0" persistency="666" pickable="0" scale="1 1 1" type="Transform" up="0 1 0" visible="1">
+                    <constraint persistency="666"/>
+                  </Object>
+                </Object>
+              </Object>
+            </Object>
+            <constraint persistency="666"/>
+          </Object>
+          <constraint persistency="666"/>
+        </Object>
+      </Object>
+      <Object base_name="None" name_space="__global__" name_suffix="5" persistency="666" pickable="0" type="Object" visible="1"/>
+    </Object>
+  </Objects>
+  <Rendering deferred_rendering="0" frustum_culling="1" fxaa="0" hmdd="0" marker="0" occlusion_culling="0" persistency="666" ssao="0" ssao_kernel="4" ssao_noise="4" ssao_radius="0.02" two_sided="1"/>
+  <Scripts persistency="666">
+    <Script base_name="ControlHandle" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	#this script initiates the handle
+	import VR
+
+	VR.controlHandle = VR.Geometry("controlHandle")
+	VR.controlHandle.setPrimitive("Sphere .1")
+	VR.controlHandle.setPickable(1)
+	VR.controlHandle.setFrom([0,0,0])
+	VR.scene.addChild(VR.controlHandle)
+	
+	# Method to properly get center position coordinates of the handle
+	def getControlHandleCenter():
+		return VR.controlHandle.getWorldFrom()
+		
+	VR.getControlHandleCenter = getControlHandleCenter
+</core>
+    </Script>
+    <Script base_name="EndPlane" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	#this script sets up the plane that is shown when the game is over
+	import VR
+	
+	plane = VR.Geometry()
+	plane.setPrimitive("Plane 1 1 0.5 0.5")
+	
+	plane.setColor("white")
+	
+	if hasattr(VR, 'sprite'): VR.sprite.destroy()
+		
+	s = VR.Sprite('end')
+	s.webOpen('http://localhost:5500/end', 400, 1)
+	s.setUp(0,-1,0)
+	s.setSize(0.5, 0.5)
+	VR.scene.addChild(s)
+
+	#position plane in the right way so that it faces the user
+	cam = VR.find("Default")
+	textpos = [
+		cam.getWorldFrom()[0] + 1 * cam.getWorldDir()[0],
+		cam.getWorldFrom()[1] + 1 * cam.getWorldDir()[1],
+		cam.getWorldFrom()[2] + 1 * cam.getWorldDir()[2],
+	]
+	s.setFrom(textpos)
+	s.setAt(cam.getAt()[0], cam.getAt()[1], cam.getAt()[2])
+	s.setVisible(False)
+	VR.endPlane = s
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</core>
+      <trig type="none" dev="" state="Pressed" param="" key="0" base_name="trigger" name_space="__global__" name_suffix="7" persistency="666"/>
+    </Script>
+    <Script base_name="Hand" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	#this script imports all the hand models that are being shown during challenges
+	import VR
+	VR.hands = []
+	hand1 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/1and5.dae')
+	#hand1.setWorldFrom([0,0,0])
+	#hand1.setWorldUp([1,0,0])
+	#hand1.translate([-6, -7, 0])
+	#hand1.setPickable(True)
+	#hand1.setPersistency(3)
+	#hand1.setScale(9,9,9)
+	hand1.setVisible(False)
+	VR.scene.addChild(hand1)
+	VR.hands.append(hand1)
+	##############################
+	
+	hand2 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/4down.dae')
+	hand2.setVisible(False)
+	VR.scene.addChild(hand2)
+	VR.hands.append(hand2)
+	##################################################
+	hand3 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/ok.dae')
+	hand3.setVisible(False)
+	VR.scene.addChild(hand3)
+	VR.hands.append(hand3)
+	########################################################
+	hand4 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/ok3fingers.dae')
+	hand4.setVisible(False)
+	VR.scene.addChild(hand4)
+	VR.hands.append(hand4)
+	#######################################################
+	hand5 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/point.dae')
+	hand5.setVisible(False)
+	VR.scene.addChild(hand5)
+	VR.hands.append(hand5)
+	#######################################################
+	hand6 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/punk.dae')
+	hand6.setVisible(False)
+	VR.scene.addChild(hand6)
+	VR.hands.append(hand6)
+	######################################################
+	hand7 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/punkthrefingertouch.dae')
+	hand7.setVisible(False)
+	VR.scene.addChild(hand7)
+	VR.hands.append(hand7)
+	#####################################################
+	hand8 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/thumbsup.dae')
+	hand8.setVisible(False)
+	VR.scene.addChild(hand8)
+	VR.hands.append(hand8)
+	
+	#hand9 = VR.loadGeometry('../../Blender/66039_Rigged_Hand/Poses/COLLADA/1and5new.dae')
+	#hand9.setVisible(False)
+	#VR.scene.addChild(hand9)
+	#VR.hands.append(hand9)
+	
+	
+	
+	
+	
+	
+	
+	
+</core>
+    </Script>
+    <Script base_name="IntroductionPlane" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	#this script sets up the introduction plane
+	import VR
+	
+	plane = VR.Geometry()
+	plane.setPrimitive("Plane 3 3 1 1")
+	
+	plane.setColor("white")
+	
+	if hasattr(VR, 'sprite'): VR.sprite.destroy()
+		
+	s = VR.Sprite('site')
+	s.webOpen('http://localhost:5500/site', 800, 1)
+	s.setUp(0,-1,0)
+	
+	VR.scene.addChild(s)
+
+	cam = VR.find("Default")
+	textpos = [
+		cam.getWorldFrom()[0] + 0.5 * cam.getWorldDir()[0],
+		cam.getWorldFrom()[1] + 0.5 * cam.getWorldDir()[1],
+		cam.getWorldFrom()[2] + 0.5 * cam.getWorldDir()[2],
+	]
+	s.setFrom(textpos)
+	s.setAt(cam.getAt()[0], cam.getAt()[1], cam.getAt()[2])
+	VR.introduction = s
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</core>
+    </Script>
+    <Script base_name="JoyStickMovement" group="loops" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	#this script handles joystick input to zoom in/zoom out 
+	import VR
+	return
+	sliderX = 104 #cursor x direction
+	sliderY = 105 #cursor y direction
+	
+	glove = VR.find('vrpn_device')
+	if not glove: return
+	VR.find("Default").translate([glove.getSlider(sliderY) / 100,0,glove.getSlider(sliderX) / 100])
+	
+</core>
+      <trig type="on_timeout" dev="" state="Pressed" param="50" key="0" base_name="trigger" name_space="__global__" name_suffix="21" persistency="666"/>
+    </Script>
+    <Script base_name="Line" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	
+	lineHandles = [
+		#[0, 0, 0],
+		#[2, 0, 0],
+		#[2, 0, 2],
+		#[4, 0, 2],
+		#[5, 0, 3],
+		#[5, 0, 4],
+		#[7, 0, 4],
+		#[8, 0, 5],
+		#[8, 0, 6.5],
+		[1,0,1],
+		[1.2, 0, .8],
+		[1.2, 0, .8],
+		[1.2, 0, .6],
+		[1.0, 0, .5],
+		[1.1, 0, .3],
+		[1.3, 0, .3],
+		[1.5, 0, .4],
+		[1.5, 0, .6],
+		[1.5, 0, .8],
+		[1.3, 0, .9],
+		[1.2, 0, 1.1],
+		[1.3, 0, 1.3],
+		[1.5, 0, 1.4],
+		[1.7, 0, 1.3],
+		[1.9, 0, 1.2],
+		[2.1, 0, 1.3],
+		[2.0, 0, 1.5],
+		[1.9, 0, 1.7],
+		[1.7, 0, 1.8],
+		[1.5, 0, 1.7],
+		[1.3, 0, 1.5],
+		[1.1, 0, 1.4],
+		[.9, 0, 1.4],		
+		[.7, 0, 1.5],
+		[.7, 0, 1.1],
+		[.8, 0, .5],
+		[.7, 0, .4],
+		[.5, 0, .4],
+		[.5, 0, .3],
+		[.4, 0, .2],
+		[.2, 0, .2],
+		[.2, 0, .0],
+		[.0, 0, .0]
+	]
+	
+	lineCount = (len(lineHandles) / 2)
+	
+	VR.ptool = VR.Pathtool()
+	VR.paths = [None] * lineCount
+	
+	for i,N in enumerate(VR.paths):	
+		VR.paths[i] = VR.ptool.newPath(None, VR.scene)
+		VR.ptool.extrude(None, VR.paths[i])
+		VR.ptool.setVisuals(False, True)
+		handles = VR.ptool.getHandles(VR.paths[i])
+		handles[0].setFrom(lineHandles[i*2 + 0])
+		handles[1].setFrom(lineHandles[i*2 + 1])
+		if i != lineCount - 1:
+			handles[2].setFrom(lineHandles[i*2 + 2])
+	VR.ptool.update()
+	
+	# Print debugging circles on the line.
+	#for linePath in VR.paths:
+	#	VR.testCircles(linePath.getPositions())		
+</core>
+    </Script>
+    <Script base_name="Plane" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	
+	startBent = 10
+	endBent = 50
+	
+	startNotBent = -10 
+	endNotBent = 10
+	
+	planes = [
+		{  
+			"x":.9, 
+			"y": 0, 
+			"z": 1.4,
+			"angle": 5,
+			"config": [ 
+				{
+					"key1": 0,
+					"key2": 0,
+					"key3": 0,
+					"key4": 1,
+					"slider1": (startNotBent, endNotBent),
+					"slider2": (startNotBent, endNotBent),
+					"slider3": (startNotBent, endNotBent),
+					"slider4": (startNotBent, endBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[0]
+				},
+				{
+					"key1": 0,
+					"key2": 0,
+					"key3": 0,
+					"key4": 0,
+					"slider1": (startNotBent, endNotBent),
+					"slider2": (startNotBent, endNotBent),
+					"slider3": (startBent, endBent),
+					"slider4": (startNotBent, endNotBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[1]
+				},
+				{
+					"key1": 1,
+					"key2": 0,
+					"key3": 0,
+					"key4": 0,
+					"slider1": (startNotBent, endBent),
+					"slider2": (startNotBent, endNotBent),
+					"slider3": (startNotBent, endNotBent),
+					"slider4": (startNotBent, endNotBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[2],
+				}
+			]
+		},
+		{  
+			"x": 2.1, 
+			"y": 0, 
+			"z": 1.3, 
+			"angle": 5,
+			"config": [ 
+				{
+					"key1": 0,
+					"key2": 0,
+					"key3": 0,
+					"key4": 0,
+					"slider1": (startNotBent, endNotBent),
+					"slider2": (startBent, endBent),
+					"slider3": (startBent, endBent),
+					"slider4": (startBent, endBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[4]
+				},
+				{
+					"key1": 1,
+					"key2": 1,
+					"key3": 0,
+					"key4": 0,
+					"slider1": (startNotBent, endBent),
+					"slider2": (startNotBent, endBent),
+					"slider3": (startNotBent, endNotBent),
+					"slider4": (startNotBent, endNotBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[3]
+				},
+				{
+					"key1": 0,
+					"key2": 0,
+					"key3": 0,
+					"key4": 0,
+					"slider1": (startNotBent, endNotBent),
+					"slider2": (startBent, endBent),
+					"slider3": (startBent, endBent),
+					"slider4": (startNotBent, endNotBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[5]
+				}
+			]
+		},
+		{  
+			"x": .8, 
+			"y": 0, 
+			"z": .5, 
+			"angle": 5,
+			"config": [ 
+				{
+					"key1": 0,
+					"key2": 1,
+					"key3": 1,
+					"key4": 0,
+					"slider1": (startNotBent, endNotBent),
+					"slider2": (startNotBent, endBent),
+					"slider3": (startNotBent, endBent),
+					"slider4": (startNotBent, endNotBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[6]
+				},
+				{
+					"key1": 0,
+					"key2": 0,
+					"key3": 0,
+					"key4": 0,
+					"slider1": (startBent, endBent),
+					"slider2": (startBent, endBent),
+					"slider3": (startBent, endBent),
+					"slider4": (startBent, endBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[7]
+				},
+				{
+					"key1": 0,
+					"key2": 0,
+					"key3": 0,
+					"key4": 1,
+					"slider1": (startNotBent, endNotBent),
+					"slider2": (startNotBent, endNotBent),
+					"slider3": (startNotBent, endNotBent),
+					"slider4": (startNotBent, endBent),
+					"sliderX": 0,
+					"sliderY": 0,
+					"hand": VR.hands[0]
+				}
+			]
+		}
+	]
+	
+	VR.planes = []
+	VR.challenges = []
+	
+	for plane in planes:
+		planeGeo = VR.Geometry("plane" + str(plane["x"]) + str(plane["y"]) + str(plane["z"]))
+		planeGeo.setPrimitive("Plane .3 .3 12")
+		planeGeo.setFrom([plane["x"], plane["y"], plane["z"]])
+		planeGeo.setColor("blue")
+		#planeGeo.setPose(5, 5, 5) #pos, dir, up
+		#def getPlaneCenter(): return [plane["x"], plane["y"], plane["z"]]
+		#planeGeo.getPlaneCenter = getPlaneCenter
+		VR.scene.addChild(planeGeo)	
+
+		VR.challenges.append({
+			"done": False,
+			"plane": planeGeo,
+			"configuration": plane["config"]
+		})
+	
+	
+	
+	
+#	def planeIntersection():
+#		return VR.getIntersected()
+#		
+#	VR.planeIntersection = planeIntersection
+</core>
+    </Script>
+    <Script base_name="Script" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	print VR.hands
+	
+	hand = VR.hands[3]
+	print hand
+	hand.setVisible(False)
+	cam = VR.find("Default")
+	handpos = [
+		cam.getWorldFrom()[0] + .1 * cam.getWorldDir()[0],
+		cam.getWorldFrom()[1] + .1 * cam.getWorldDir()[1],
+		cam.getWorldFrom()[2] + .1 * cam.getWorldDir()[2],
+		]
+	#challenge["configuration"][0]["hand"].setVisible(True)
+	hand.setFrom(handpos)
+	hand.setAt(cam.getWorldFrom())
+	hand.setUp(cam.getUp())
+	#hand.setFrom([-4.25075, -4.07058, -6.40133])
+	#hand.setDir([-0.47193, 0.0401702, -0.88072])
+	#hand.setUp([-0.881414, -0.0440124, 0.47029])
+	hand.setScale([10,10,10])
+</core>
+    </Script>
+    <Script base_name="TESTING" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	
+	for challenge in VR.challenges:
+		challenge["done"] = False
+		challenge["plane"].setColor("blue")
+		
+		
+	#VR.hands[0].setVisible(True)
+
+	#VR.hands[0].setFrom([-4,1,-9])
+	#VR.hands[0].setAt([0,0,-1])
+	
+	#VR.hands[0].setScale([7,7,7])
+	#VR.hands[0].setScale([1,1,1])
+	#VR.hands[0].setFrom([0,0,0])
+
+
+
+	##if hasattr(VR, 'sprite'): VR.sprite.destroy()
+	
+	##VR.introduction.setVisible(False)
+	
+	#m = dev.getMessage()
+	#dev.answer(dev.getKey(), 'pong')
+	
+	#posPlane = [0,0,0]
+	#challenge = VR.challenges[0]
+
+	#cam = VR.find("Default")
+	#cam.setAt(posPlane)
+	#handpos = [
+	#	cam.getWorldFrom()[0] + 1 * cam.getWorldDir()[0],
+	#	cam.getWorldFrom()[1] + 1 * cam.getWorldDir()[1],
+	#	cam.getWorldFrom()[2] + 1 * cam.getWorldDir()[2],
+	#]
+	#challenge["configuration"][VR.challengePart]["hand"].setVisible(True)
+	#challenge["configuration"][VR.challengePart]["hand"].setFrom(handpos)
+	#challenge["configuration"][VR.challengePart]["hand"].setAt(cam.getWorldFrom())
+
+
+	
+	
+</core>
+    </Script>
+    <Script base_name="checkControlHandle" group="loops" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	import math
+	
+	if not hasattr(VR, 'hasInitialized'): return
+	
+	if not VR.controlHandle.getFrom() == [0,0,0]:
+		VR.touchedHandle = True
+	
+	#this method calculates the distance between ball and line
+	def euclideanDistance(vec1, vec2, dimension=3):
+		sum = 0
+		for i in range(0, dimension):
+			sum += math.pow(vec1[i] - vec2[i], 2)
+		return math.sqrt(sum)
+	
+	VR.euclideanDistance = euclideanDistance
+	
+	# Bring handle into line plane
+	#pos = VR.controlHandle.getWorldFrom()
+	#VR.controlHandle.setWorldFrom(pos[0], 0, pos[2])
+	
+	# Position of handle (draggable sphere).
+	chandle = VR.getControlHandleCenter()
+	
+	# After the for loop, this will contain the 
+	# minimal distance between line and handle.
+	minDist = 10000
+	
+	# Maximum distance between handle and line for 
+	# for the handle to touch the line.
+	eps = .1
+	
+	for linePath in VR.paths:
+		for idx, node in enumerate(linePath.getPositions()):
+			dist = euclideanDistance(node, chandle)
+			minDist = dist if dist &lt; minDist else minDist
+		
+	# Set handle color to green if touching the line, 
+	# red otherwise.
+	if (minDist &lt; eps and not VR.isChallenge):
+		VR.controlHandle.setColor("green")
+		
+	elif not VR.isChallenge:
+		VR.controlHandle.setColor("red")
+		VR.penalties = VR.penalties + 1
+	else:
+		# When challenge is running, change the handles color according to the
+		# remaining time
+		m = VR.Material('challengeMaterial')
+		m.setDiffuse([
+			(VR.timeInChallenge / (VR.maxChallengeTime * 1.0)),
+			(1 - VR.timeInChallenge / (VR.maxChallengeTime * 1.0)),
+			0
+		])
+		VR.controlHandle.setMaterial(m)
+	
+	#this functioin checks whether all challenges have been attempted
+	#in order to determine whether game has ended
+	def challengesDone():
+		challengesDone = True
+		for challenge in VR.challenges:
+			challengesDone = challengesDone and challenge["done"]
+		return challengesDone
+	
+	if (euclideanDistance(VR.controlHandle.getFrom(), [1,0,1]) &lt; .05 ) and challengesDone():
+		VR.gameOver = True
+		VR.endPlane.setVisible(True)
+		VR.controlHandle.setPickable(-1)
+		
+		
+	oldPos = VR.controlHandle.getWorldFrom()
+	VR.controlHandle.setWorldFrom([oldPos[0], 0, oldPos[2]])
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</core>
+      <trig type="on_timeout" dev="" state="Pressed" param="50" key="0" base_name="trigger" name_space="__global__" name_suffix="0" persistency="666"/>
+    </Script>
+    <Script base_name="checkIntroPlane" group="loops" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	#this script handles the interaction at the beginning when the user 
+	#has to form a fist so that the game can begin
+	import VR
+	glove = VR.find("vrpn_device")
+	
+	if not glove: return
+	
+	slider1 = 100 #index finger
+	slider2 = 101 #middle finger
+	slider3 = 102 #ring finger
+	slider4 = 103 #small finger
+	
+	startBent = 10
+	endBent = 50
+	
+	#checking whether hand is forming a fist pose
+	def checkSlider(sliderNo):
+		return (glove.getSlider(sliderNo) &gt; startBent 
+				and glove.getSlider(sliderNo) &lt; endBent)
+	
+	fistPose = True	
+	for value in [slider1, slider2, slider3, slider4]:
+		fistPose = fistPose and checkSlider(value)
+		
+	#make introduction plane disappear when a fist pose has been formed
+	if (fistPose):
+		VR.introduction.setVisible(False)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+</core>
+      <trig type="on_timeout" dev="mouse" state="Pressed" param="50" key="-1" base_name="trigger" name_space="__global__" name_suffix="1" persistency="666"/>
+    </Script>
+    <Script base_name="checkPlane" group="loops" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	#this script is responsible for triggering and executing the challenges
+	#including showing the demanded hand poses
+	import VR
+	import time
+	from random import randint
+	import sys
+	import math
+	
+	  #numbers for reading glove data:
+	key1 = 0 #index finger
+	key2 = 1 #middle finger
+	key3 = 2 #ring finger
+	key4 = 3 #little finger
+	
+	slider1 = 100 #index finger
+	slider2 = 101 #middle finger
+	slider3 = 102 #ring finger
+	slider4 = 103 #small finger
+	
+	sliderX = 104 #cursor x direction
+	sliderY = 105 #cursor y direction
+
+	sliderTolerance = 0
+	glove = VR.find('vrpn_device')
+	
+	if not hasattr(VR, 'hasInitialized'): return
+	#if not glove: return
+
+	#this function checks whether the current pose of the hand 
+	#is the same as the demanded position of the hand (in challenges)
+  	def checkHand(configuration):  
+  		#print configuration
+  		#print getConfiguration(glove)
+  	
+		if configuration["key1"] != getConfiguration(glove)[0]: #and (configuration["key1"] != 0 and getConfiguration(glove)[0] == -1):
+			return False
+		if configuration["key2"] != getConfiguration(glove)[1]: #and (configuration["key2"] != 0 and getConfiguration(glove)[1] == -1):
+			return False
+		if configuration["key3"] != getConfiguration(glove)[2]: #and (configuration["key3"] != 0 and getConfiguration(glove)[2] == -1):
+			return False
+		if configuration["key4"] != getConfiguration(glove)[3]: #and (configuration["key4"] != 0 and getConfiguration(glove)[3] == -1):
+			return False
+		if configuration["slider1"][0] &gt; getConfiguration(glove)[4] or configuration["slider1"][1] &lt; getConfiguration(glove)[4]:
+			return False
+		if configuration["slider2"][0] &gt; getConfiguration(glove)[5] or configuration["slider2"][1] &lt; getConfiguration(glove)[5]:
+			return False
+		if configuration["slider3"][0] &gt; getConfiguration(glove)[6] or configuration["slider3"][1] &lt; getConfiguration(glove)[6]:
+			return False
+		if configuration["slider4"][0] &gt; getConfiguration(glove)[7] or configuration["slider4"][1] &lt; getConfiguration(glove)[7]:
+			return False
+		#if configuration["sliderX"] and configuration["sliderX"] != getConfiguration(glove)[8]:
+		#	return False
+		#if configuration["sliderY"] and configuration["sliderY"] != getConfiguration(glove)[9]:
+		#	return False
+		#print True
+		return True
+	
+	#this methode reads the current cyberglove pose to compare it
+	#with the demanded pose
+	def getConfiguration(glove):
+		#if no glove connected: return
+		if not glove: return {}
+	
+		obj = {}
+		if glove.getKeyState(key1) == -1:
+			obj["key1"] = 0
+		else:
+			obj["key1"] = glove.getKeyState(key1)
+			
+		if glove.getKeyState(key2) == -1:
+			obj["key2"] = 0
+		else:
+			obj["key2"] = glove.getKeyState(key2)
+		
+		if glove.getKeyState(key3) == -1:
+			obj["key3"] = 0
+		else:
+			obj["key3"] = glove.getKeyState(key3)
+		
+		if glove.getKeyState(key4) == -1:
+			obj["key4"] = 0
+		else:
+			obj["key4"] = glove.getKeyState(key4)
+		
+		obj["slider1"] = glove.getSlider(slider1)
+		obj["slider2"] = glove.getSlider(slider2)
+		obj["slider3"] = glove.getSlider(slider3)
+		obj["slider4"] = glove.getSlider(slider4)
+			
+		obj["sliderX"] = glove.getSlider(sliderX)
+		obj["sliderY"] = glove.getSlider(sliderY)
+		config = [obj["key1"], obj["key2"], obj["key3"], obj["key4"], obj["slider1"],
+					obj["slider2"], obj["slider3"], obj["slider4"]]
+		return config
+	
+	epsilon = .08 #tolerated distance between ball and line 
+				  # before receiving penalties
+		
+	#print getConfiguration(glove)
+	#if VR.timeInChallenge &gt; VR.maxChallengeTime or (checkHand(challenge["configuration"][VR.challengePart]) and VR.challengePart - 1 &gt;= len(challenge["configuration"])):
+	def endAll():
+		# challenges done, this will run additionally to the code blow
+		cam = VR.find("Default")
+		cam.setFrom(VR.camBeforeChallengeFrom)
+		cam.setAt(VR.camBeforeChallengeAt)
+		challenge["done"] = True
+		VR.isChallenge = False
+		VR.controlHandle.setPickable(1)
+				 
+	
+	#for debugging reasons
+	#print getConfiguration(glove)		
+	#print checkHand(VR.challenges[0]["configuration"][0])
+	#print checkHand(VR.challenges[0]["configuration"][1])
+	#print VR.challenges[0]["configuration"][1]
+	#print getConfiguration(glove)
+	#print checkHand(VR.challenges[0]["configuration"][2])
+	#print checkHand(VR.challenges[1]["configuration"][0])
+	#print checkHand(VR.challenges[1]["configuration"][1])
+	#print checkHand(VR.challenges[1]["configuration"][2])
+	#print checkHand(VR.challenges[2]["configuration"][0])
+	#print checkHand(VR.challenges[2]["configuration"][1])
+	##print checkHand(VR.challenges[2]["configuration"][2])
+	#print "--"
+	
+
+	for challenge in VR.challenges:
+		#if challenge has already been attempted: go on
+		if challenge["done"]:
+			continue
+
+		posHandle = VR.getControlHandleCenter()
+		posPlane = challenge["plane"].getWorldFrom()
+	
+		distance = VR.euclideanDistance(posHandle, posPlane)
+		
+		if VR.isChallenge:
+			VR.controlHandle.setWorldFrom(VR.challengePos)
+	
+		if (distance &lt; epsilon) and (not VR.isChallenge):
+			# First iteration, starting challenge
+			VR.isChallenge = True
+			VR.timeInChallenge = 0
+			VR.controlHandle.setColor("black")
+			#VR.controlHandle.setPickable(-1)
+			VR.challengePos = VR.controlHandle.getWorldFrom()
+			
+			# Save old camera pos
+			cam = VR.find("Default")
+			VR.camBeforeChallengeFrom = cam.getFrom()
+			VR.camBeforeChallengeAt = cam.getAt()
+			
+			# Show hand	
+			challenge["configuration"][VR.challengePart]["hand"].setFrom([-4.25075, -4.07058, -6.40133])
+			challenge["configuration"][VR.challengePart]["hand"].setDir([-0.47193, 0.0401702, -0.88072])
+			challenge["configuration"][VR.challengePart]["hand"].setUp([-0.881414, -0.0440124, 0.47029])
+			challenge["configuration"][VR.challengePart]["hand"].setScale([7,7,7])
+			challenge["configuration"][VR.challengePart]["hand"].setVisible(True)
+	
+		elif distance &lt; epsilon and VR.isChallenge: 
+			# challenge is already started, check
+			VR.timeInChallenge += 20
+			
+			#print VR.challengePart
+			#print "of"
+			#print len(challenge["configuration"])
+			
+			if VR.timeInChallenge &gt; VR.maxChallengeTime:
+				# lost challenge
+				challenge["plane"].setColor("red")
+				VR.penalties = VR.penalties + 25
+				challenge["configuration"][VR.challengePart]["hand"].setVisible(False)
+				#VR.hand.setVisible(False)
+				endAll()
+				return True
+			
+			#elif VR.challengePart &lt; len(challenge["configuration"] and checkHand(challenge["configuration"][VR.challengePart]): 
+			elif checkHand(challenge["configuration"][VR.challengePart]): 
+				VR.challengePart += 1
+				if VR.challengePart &gt;= len(challenge["configuration"]):
+					# challenge won, no more challenge part available
+					VR.challengePart = 0
+					challenge["plane"].setColor("green")
+					print "you won!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+					#VR.penalties = math.max(0, VR.penalties - 3)
+					VR.hasWon = True
+					challenge["configuration"][VR.challengePart - 1]["hand"].setVisible(False)
+					endAll()
+				else:
+					# challenge won, more parts to come
+					if VR.challengePart &gt; 0:
+						challenge["configuration"][VR.challengePart - 1]["hand"].setVisible(False)
+					VR.timeInChallenge = 0
+					print "next challenge"
+					#cam = VR.find("Default")
+					#handpos = [
+					#	cam.getWorldFrom()[0] + 6 * cam.getWorldDir()[0],
+					#	cam.getWorldFrom()[1] + 6 * cam.getWorldDir()[1],
+					#	cam.getWorldFrom()[2] + 6 * cam.getWorldDir()[2],
+					#]
+					#challenge["configuration"][0]["hand"].setVisible(True)
+					#challenge["configuration"][VR.challengePart]["hand"].setFrom(handpos)
+					#challenge["configuration"][VR.challengePart]["hand"].setAt(cam.getWorldFrom())
+					challenge["configuration"][VR.challengePart]["hand"].setVisible(True)	
+					challenge["configuration"][VR.challengePart]["hand"].setFrom([-4.25075, -4.07058, -6.40133])
+					challenge["configuration"][VR.challengePart]["hand"].setDir([-0.47193, 0.0401702, -0.88072])
+					challenge["configuration"][VR.challengePart]["hand"].setUp([-0.881414, -0.0440124, 0.47029])
+					challenge["configuration"][VR.challengePart]["hand"].setScale([7,7,7])
+			
+	
+	
+	
+	
+	
+	
+</core>
+      <trig type="on_timeout" dev="" state="Pressed" param="20" key="0" base_name="trigger" name_space="__global__" name_suffix="0" persistency="666"/>
+    </Script>
+    <Script base_name="controlHandleDrag" group="loops" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	
+	if not hasattr(VR, 'hasInitialized'): return
+		
+	glove = VR.find('vrpn_device')
+	b = VR.find('ART_tracker.2')
+	
+	if not glove or not b:
+		print 'no glove or beacon'
+		return
+	
+	#print VR.find('vrpn_device_av_ray')
+	
+	glove.setBeacon(b)
+	#b.findAll('av_ray')[0].show()	
+	VR.find('vrpn_device_av_ray').show()
+	#VR.find('server_av_ray.1').show()
+	#VR.find('flystick_av_ray').show()
+	#VR.find('mouse_av_ray').show()
+	#VR.find('keyboard_av_ray').show()
+	
+	#for i in range(0, 800):
+	#	key = glove.getSlider(i)
+	#	if key != 0:
+	#		print "" + str(i) + " is " + str(key)
+	
+	def startDrag():
+		if glove.intersect(VR.getRoot()):
+			VR.isDragging = True
+			print "Attempting to start dragging, found intersecting object(s)."
+			obj = glove.getIntersected()
+			print "Intersecting Object:" + str(obj)
+			glove.drag(obj)
+		else:
+			print "Attempting to start dragging, but no intersecting object."
+		
+	def stopDrag():
+		VR.isDragging = False
+		glove.drop()
+	
+	if hasattr(glove, 'getSlider') and hasattr(glove, 'setBeacon'):
+		num = glove.getSlider(100) # bend sensor data
+		glove.setBeacon(b)
+	else:
+		num = 0	
+	
+	# If gripping while not dragging the handle, start dragging it.
+	if num &gt;= 10 and not VR.isDragging:
+		VR.fGlove = 0
+		VR.touchedHandle = True
+		startDrag()
+		
+	# If loosening the grip while dragging the handle, stop dragging it.
+	# Also stio dragging if a challenge is running
+	if (num &lt; 10 and VR.isDragging) or VR.isChallenge:
+		VR.fGlove = 1
+		stopDrag()
+		
+	#			glove.drag(obj)
+	#			print "drag"
+	#		else: glove.drop()
+
+</core>
+      <trig type="on_timeout" dev="" state="Pressed" param="50" key="0" base_name="trigger" name_space="__global__" name_suffix="0" persistency="666"/>
+    </Script>
+    <Script base_name="debugging" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	
+	if not hasattr(VR, "debuggingContainer"):
+		VR.debuggingContainer = VR.Object('debugging')
+		VR.scene.addChild(VR.debuggingContainer)
+	
+	# Create small debugging spheres on all coordinates stored in the
+	# array nodes. nodes has to be an array of three dimensional arrays,
+	# each containing the coordinates of the spheres.
+	# The spheres will be created as children of VR.scene
+	def testCircles(nodes):
+		for idx, node in enumerate(nodes):
+			circ = VR.Geometry("debug" + str(node[0])+str(node[1])+str(node[2]))
+			circ.setPrimitive("Sphere 0.01")
+			circ.setFrom(node)
+			VR.debuggingContainer.addChild(circ)
+	VR.testCircles = testCircles
+</core>
+    </Script>
+    <Script base_name="end" group="HTML" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="HTML">
+      <core>
+&lt;html&gt;
+
+&lt;head&gt;
+ &lt;style type="text/css"&gt;
+  body {font-size:200%;
+		text-align:center;
+		background:#E0FFFF;
+		color: #008080}
+  
+  div { moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+ &lt;/style&gt;
+  &lt;script&gt;
+	var websocket = new WebSocket('ws://localhost:5500');
+	websocket.onopen = function() { msg('open'); };
+	websocket.onerror = function(e) { msg('error'); };
+	websocket.onmessage = function(m) { if(m.data) msg('msg: '+m.data); };
+	websocket.onclose = function(e) { msg('closed with code '+e.code); };
+	
+	function send(m){ websocket.send(m); };
+	function msg(m){ document.getElementById("msg").innerHTML += '&lt;br&gt;' + m; };
+ &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;div&gt;
+	You reached the end of the game. Well done!
+	
+	&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+</core>
+    </Script>
+    <Script base_name="init" group="no group" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	import os
+	#Only activate following line if real or virtual glove available!!
+	#os.system("cd ../../Rechner/Rechner/build &amp;&amp; ./server")
+	#if hasattr(VR, 'scene') 
+	#vrpnd = VR.find("vrpn_device")
+		
+	#if hasattr(VR, 'scene') and VR.scene: VR.scene.destroy()
+	VR.scene = VR.Object('scene')
+	VR.getRoot().find('light').addChild(VR.scene)
+	VR.counter = 100;
+	VR.find('Default').setFrom([0.0358, 2.9072, -0.07152])
+	VR.find("Default").setAt([-0.0313, 0.0928, -0.0133])
+	VR.find("Default").setUp([0,1,0])
+	
+	#VR.dots = VR.Object('debugcircles')
+	#VR.scene.addChild(VR.dots)
+	VR.timeCounter = 0
+	VR.isDragging = False
+	
+	VR.isChallenge = False
+	VR.timeInChallenge = 0
+	VR.challengePos = []
+	VR.challengePart = 0
+	VR.gameOver = False
+	VR.maxChallengeTime = 3000
+	VR.hasWon = False
+	VR.challenges = []
+	VR.hands = []
+	VR.penalties = 0
+	# Create game objects
+	VR.triggerScript("debugging")
+	VR.triggerScript("Line")
+	VR.triggerScript("ControlHandle")
+	VR.triggerScript("Hand")
+	VR.triggerScript("Plane")
+	VR.triggerScript("IntroductionPlane")
+	VR.triggerScript("EndPlane")
+	
+	# Debugging spheres for line
+	#VR.testCircles([getControlHandleCenter()])
+
+	VR.hasInitialized = True
+	print 'done init'
+
+	#if digi1 == 1:
+	#	print ("digi1")
+	#if digi2 == 1:
+	#	print ("digi2")
+</core>
+    </Script>
+    <Script base_name="setPlaneDirections" group="loops" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	import VR
+	
+	for challenge in VR.challenges:
+		plane = challenge["plane"]
+		
+		
+		# Make plane look at cam
+		plane.setAt(VR.find("Default").getWorldFrom())	
+		
+		# (Alternative) Make plane look at control handle	
+		#plane.setAt(VR.controlHandle.getWorldFrom())
+</core>
+      <trig type="on_timeout" dev="" state="Pressed" param="50" key="0" base_name="trigger" name_space="__global__" name_suffix="13" persistency="666"/>
+    </Script>
+    <Script base_name="site" group="HTML" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="HTML">
+      <core>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+ &lt;style type="text/css"&gt;
+  body {font-size:180%;
+		text-align:center;
+		background:#E0FFFF;
+		color: #008080}
+  
+  div { moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+ &lt;/style&gt;
+  &lt;script&gt;
+	var websocket = new WebSocket('ws://localhost:5500');
+	websocket.onopen = function() { msg('open'); };
+	websocket.onerror = function(e) { msg('error'); };
+	websocket.onmessage = function(m) { if(m.data) msg('msg: '+m.data); };
+	websocket.onclose = function(e) { msg('closed with code '+e.code); };
+	
+	function send(m){ websocket.send(m); };
+	function msg(m){ document.getElementById("msg").innerHTML += '&lt;br&gt;' + m; };
+ &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;div&gt;&lt;h2&gt;Welcome to Line Drag!&lt;/h2&gt;&lt;br&gt;
+	&lt;b&gt;To start the game, bend all of your fingers to that they form &lt;br&gt;
+	a fist.&lt;/b&gt; &lt;br&gt;
+	As soon as you move the ball the timer will start. &lt;br&gt;
+	Move the ball by pointing at it and bending your index finger.&lt;br&gt;
+	If you get too far away from the path the ball will turn red &lt;br&gt;
+	and you will receive penalties. &lt;br&gt;
+	When you get to a blue plane, try to mimic the shown pose as fast as possible. You will loose points if you are too slow. &lt;br&gt;
+	&lt;h2&gt;Have fun and good luck!&lt;/h2&gt; &lt;br&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+</core>
+    </Script>
+    <Script base_name="updateTextContainer" group="loops" name_space="__script__" name_suffix="0" persistency="666" server="server1" type="Python">
+      <core>
+	#this script is responsible for updating time and penalty values
+	import VR
+	import math
+	
+	if not hasattr(VR, "gameOver"): return
+	
+	#this method checks whether handle as already been moved away from origin
+	def checkHandlePosition():
+		return (VR.controlHandle.getFrom()[0] == 0 and
+				VR.controlHandle.getFrom()[1] == 0 and
+				VR.controlHandle.getFrom()[2] == 0)
+	
+	
+	if not hasattr(VR, "touchedHandle"): return	
+	
+	if checkHandlePosition(): return 
+	#stop updating time when end of game has been reached
+	if VR.gameOver: 
+		VR.infotext.setText("Game finished! " + str(math.floor(VR.timeCounter / 1000.0)) + " seconds  " + str(math.floor(VR.penalties/5)) + " penalties")
+		return
+	
+	if not hasattr(VR, "hasInitialized"): return
+	
+	#initialize infotext container
+	if not hasattr(VR, "infotext"): 
+		VR.infotext = VR.Sprite("infotextcontainer")
+		VR.infotext.setSize(10,1)
+		m = VR.Material('txt')
+		m.setZOffset(-1, -1)
+		VR.infotext.setMaterial(m)
+		VR.scene.addChild(VR.infotext)
+	
+	VR.timeCounter += 50
+	
+	#generate text
+	if VR.isChallenge:
+		#show remaining time in challenge
+		VR.infotext.setText("Challenge: " + str((VR.maxChallengeTime - VR.timeInChallenge) / 1000.0) + "s remaining")
+	else:
+		#show time and penalty values
+		VR.infotext.setText(str(math.floor(VR.timeCounter / 1000.0)) + " seconds  " + str(math.floor(VR.penalties/5)) + " penalties")
+	
+	#position text in a way that it is always facing the user
+	cam = VR.find("Default")
+	textpos = [
+		cam.getWorldFrom()[0] + 20 * cam.getWorldDir()[0] + 9 * cam.getUp()[0],
+		cam.getWorldFrom()[1] + 20 * cam.getWorldDir()[1] + 9 * cam.getUp()[1],
+		cam.getWorldFrom()[2] + 20 * cam.getWorldDir()[2] + 9 * cam.getUp()[2],
+	]
+	textAt = [
+		cam.getWorldFrom()[0] + 30 * cam.getWorldDir()[0] + 9 * cam.getUp()[0],
+		cam.getWorldFrom()[1] + 30 * cam.getWorldDir()[1] + 9 * cam.getUp()[1],
+		cam.getWorldFrom()[2] + 30 * cam.getWorldDir()[2] + 9 * cam.getUp()[2],
+	]
+	
+	VR.infotext.setFrom(textpos)
+	VR.infotext.setAt(textAt)
+	VR.infotext.setVisible(True)
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</core>
+      <trig type="on_timeout" dev="" state="Pressed" param="50" key="0" base_name="trigger" name_space="__global__" name_suffix="23" persistency="666"/>
+    </Script>
+  </Scripts>
+  <Sockets persistency="666"/>
+  <Background color="0.797391 0.925948 0.969772" format=".png" path="" persistency="666" type="3"/>
+  <Navigation active="Orbit" persistency="666"/>
+  <Materials persistency="666"/>
+  <Semantics persistency="666"/>
+</Scene>
