@@ -1,7 +1,5 @@
 # Cyberglove
 
-# Cyberglove
-
 Practical course "Virtual Reality" in the Winter semester 2017/18 at the Karlsruhe Insitute of Technology. 
 [This video](https://www.youtube.com/watch?v=ufuSgNBOhbE) shows an overview over what we achieved during this project.
 
