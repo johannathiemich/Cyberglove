@@ -10,4 +10,4 @@ board and 3d-printed the case. The case was attached using a magnet.
 
 In the file cyberglove.pdf we documented in detail what we worked on during this practical course.
 
-Please note: The github repo description lists C++ as the used language, but we implemented the use cases mainly using Python. 
+Please note: The github repo description lists HTML as the used language, but we implemented the use cases mainly using Python. 
